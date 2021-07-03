@@ -1,0 +1,18 @@
+name: X2
+on:
+    push:
+        branches: [ master ]
+    pull_request:
+        branches: [ master ]
+
+jobs:
+    test:
+        runs-on: ubuntu-latest
+        container:
+            image: denoland/deno:1.11.2
+
+        steps:
+        - uses: actions/checkout@v2
+        - run: deno lint --unstable
+        - run: deno cache deps.ts
+        - run: deno run --allow-read tests/x2.test.ts

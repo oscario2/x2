@@ -1,0 +1,14 @@
+{
+    "name": "x2",
+    "description": "",
+    "version": "0.0.1",
+    "type": "module",
+    "main": "./build/index.js",
+    "module": "./build/index.js",
+    "types": "./build/index.d.ts",
+    "scripts": {
+        "node": "node tests/x2.test.js",
+        "deno": "deno run --allow-read tests/x2.test.ts",
+        "all": "npm run node && npm run deno"
+    }
+}
